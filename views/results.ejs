@@ -11,18 +11,13 @@
   </head>
   <body class="container">
     <main class="container">
-      <% const scorePercent = score.score / score.total * 100 %> <% if
-      (scorePercent === 100) { %>
-      <h1>You're a testing natural! 🎉</h1>
-      <% } else if (scorePercent >= 50) { %>
-      <h1>You're getting there. 🤓</h1>
-      <% } else if (scorePercent > 0) { %>
-      <h1>You may need to hit the books. 📚</h1>
-      <% } else { %>
-      <h1>You need serious help. 😵</h1>
-      <% } %>
-
-      <h2>You scored <%= score.score %> out of <%= score.total %></h2>
+      <h1>Well done! 🎉</h1>
+      <article>
+        <header>
+          <h2>Your score:</h2>
+        </header>
+        <h2><%= score %></h2>
+      </article>
     </main>
     <a href="/" role="button">Play Again!</a>
   </body>
