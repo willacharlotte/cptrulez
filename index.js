@@ -15,6 +15,14 @@ app.get("/results", (req, res) => {
   res.render("results");
 });
 
+app.get("/api/questions", (req, res) => {
+  res.json("the questions");
+});
+
+app.post("/api/score", (req, res) => {
+  res.send("Your score!");
+});
+
 app.listen(3000, () => {
-  console.log("⚡ App running at https://localhost:3000 !");
+  console.log("⚡ App running at https://localhost:3000");
 });
