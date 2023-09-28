@@ -1,4 +1,4 @@
-export function calculateScore(questions, selectedAnswers) {
+function calculateScore(questions, selectedAnswers) {
   let score = 0;
 
   for (let i = 0; i < questions.length; i++) {
