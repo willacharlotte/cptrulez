@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const fs = require("fs");
 
 app.set("view engine", "ejs");
 
@@ -8,25 +9,15 @@ app.get("/", (req, res) => {
 });
 
 app.get("/quiz", async (req, res) => {
-  const response = await fetch("http://localhost:3000/api/questions");
-  if (response.ok) {
-    const questions = await response.json();
-    res.render("quiz", { questions });
-  } else {
-    res.status(500).send("Oops... Failed to fetch question from the API.");
-  }
+  const questionsData = fs.readFileSync("./static/questions.json", "utf-8");
+  const questions = JSON.parse(questionsData);
+  res.render("quiz", { questions });
 });
 
-app.get("/results", (req, res) => {
-  res.render("results");
-});
-
-app.get("/api/questions", (req, res) => {
-  res.json("the questions");
-});
-
-app.post("/api/score", (req, res) => {
-  res.send("Your score!");
+app.post("/api/submit", async (req, res) => {
+  // const score = calculateScore(req.body);
+  const score = "test score 420-69";
+  res.render("results", { score });
 });
 
 app.listen(3000, () => {
