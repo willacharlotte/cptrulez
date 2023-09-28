@@ -7,8 +7,14 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/quiz", (req, res) => {
-  res.render("quiz");
+app.get("/quiz", async (req, res) => {
+  const response = await fetch("http://localhost:3000/api/questions");
+  if (response.ok) {
+    const questions = await response.json();
+    res.render("quiz", { questions });
+  } else {
+    res.status(500).send("Oops... Failed to fetch question from the API.");
+  }
 });
 
 app.get("/results", (req, res) => {

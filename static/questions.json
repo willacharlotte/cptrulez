@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "question": "What's the most effective way to conduct unit testing?",
+      "options": [
+        "Write tests that test the smallest possible unit of functionality so that the tests remain independent.",
+        "Hire a team of professional actors to test the units, they'll find the drama in your code.",
+        "Skip it altogether; real-world users are the best unit testers.",
+        "Write a comprehensive novel about your code instead; the bugs will reveal themselves through the narrative."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "Why is regression testing so essential?",
+      "options": [
+        "To see how much your code has 'regressed' since the last release.",
+        "To ensure new features don't break old ones.",
+        "It's not; just release and let users discover the surprises.",
+        "It's a covert plot to keep testers employed."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What's the best way to handle code reviews during a tight deadline?",
+      "options": [
+        "Skip them entirely; real programmers don't make mistakes.",
+        "Conduct reviews during team lunch breaks; nothing like pizza and bugs.",
+        "Ask the intern to do the code reviews; they need the practice.",
+        "Review code in a haunted house to ensure thorough 'scare-chitecture."
+      ],
+      "answer": 1
+    },
+    {
+      "question": "What's the secret to successful load testing?",
+      "options": [
+        "Use an army of robots to simulate user traffic; humans are too unreliable.",
+        "Load testing is a myth; the cloud magically handles all loads.",
+        "Convince all your friends and family to visit your website simultaneously.",
+        "Make sure you test on the heaviest load day of the year; nothing could go wrong."
+      ],
+      "answer": 0
+    },
+    {
+      "question": "How do you ensure thorough security testing?",
+      "options": [
+        "Write all passwords in plain text in the code; that way, everyone can help test security.",
+        "Get a colleague who is not associated with your project to test your security. A fresh perspective can help you spot anything you've missed.",
+        "Declare your code 'unhackable' and wait for the world to prove you wrong.",
+        "Just hope for the best; it's not like anyone would try to hack your code, right?"
+      ],
+      "answer": 1
+    }
+  ]
+}
