@@ -18,7 +18,7 @@ app.get("/quiz", async (req, res) => {
   res.render("quiz", { questions });
 });
 
-app.post("/api/submit", async (req, res) => {
+app.post("/results", async (req, res) => {
   const score = calculateScore(questions, req.body);
   res.render("results", { score });
 });
