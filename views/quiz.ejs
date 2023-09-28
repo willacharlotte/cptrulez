@@ -1,1 +1,36 @@
-Quiz page!
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz</title>
+    <link rel="stylesheet" href="../node_modules/picocss/pico.min.css" />
+  </head>
+  <body>
+    <article class="container">
+      <section>
+        <h1>Quiz!</h1>
+      </section>
+      <section>
+        <form>
+          <% questions.forEach((question, questionIndex) => { %>
+          <p><%= question %></p>
+          <% question.options.forEach((option, optionIndex) => { %>
+          <input
+            type="radio"
+            id="question_<%= questionIndex %>_option_<%= optionIndex %>"
+            name="question_<%= questionIndex  %>"
+            value="option_<%= optionIndex %>"
+          />
+          <label for="question_<%= questionIndex %>_option_<%= optionIndex %>"
+            ><%= option %></label
+          >
+          <% }) %> <% }); %>
+        </form>
+      </section>
+      <section>
+        <button>Start Quiz!</button>
+      </section>
+    </article>
+  </body>
+</html>
