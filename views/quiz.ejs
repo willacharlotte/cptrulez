@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz</title>
-    <link rel="stylesheet" href="../node_modules/picocss/pico.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
   </head>
-  <body>
-    <article class="container">
-      <section>
-        <h1>Quiz!</h1>
-      </section>
-      <section>
-        <form>
+  <body class="container">
+    <main>
+      <h1>CPTRulez Quiz</h1>
+      <article>
+        <form action="/api/submit" method="post">
           <% questions.forEach((question, questionIndex) => { %>
           <p><%= question %></p>
           <% question.options.forEach((option, optionIndex) => { %>
@@ -26,11 +27,10 @@
             ><%= option %></label
           >
           <% }) %> <% }); %>
+          <button type="submit">Submit Answers</button>
         </form>
-      </section>
-      <section>
-        <button>Start Quiz!</button>
-      </section>
-    </article>
+      </article>
+    </main>
+    <button>Next Question</button>
   </body>
 </html>
