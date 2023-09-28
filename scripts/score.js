@@ -1,5 +1,5 @@
 function calculateScore(questions, selectedAnswers) {
-  const selectedAnswers = Object.values(selectedAnswers).map(Number);
+  selectedAnswers = Object.values(selectedAnswers).map(Number);
   let score = 0;
 
   for (let i = 0; i < questions.length; i++) {
