@@ -1,11 +1,11 @@
 const express = require("express");
 
-const app = express;
+const app = express();
 
-app.length("/", (req, res) => {
+app.get("/", (req, res) => {
   res.send("Hello world!");
 });
 
-app.listen(port, () => {
-  console.log("⚡ App running at https://localhost:3000!");
+app.listen(3000, () => {
+  console.log("⚡ App running at https://localhost:3000 !");
 });
