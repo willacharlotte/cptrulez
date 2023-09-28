@@ -1,5 +1,5 @@
-import { calculateScore } from "./scripts/score";
 const questionsData = fs.readFileSync("./static/questions.json", "utf-8");
+const calculateScore = require("./scripts/score").calculateScore;
 const questions = JSON.parse(questionsData).questions;
 const express = require("express");
 const fs = require("fs");
