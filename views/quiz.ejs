@@ -15,22 +15,27 @@
       <article>
         <form action="/api/submit" method="post">
           <% questions.forEach((question, questionIndex) => { %>
-          <p><%= question %></p>
-          <% question.options.forEach((option, optionIndex) => { %>
-          <input
-            type="radio"
-            id="question_<%= questionIndex %>_option_<%= optionIndex %>"
-            name="question_<%= questionIndex  %>"
-            value="option_<%= optionIndex %>"
-          />
-          <label for="question_<%= questionIndex %>_option_<%= optionIndex %>"
-            ><%= option %></label
-          >
-          <% }) %> <% }); %>
-          <button type="submit">Submit Answers</button>
+          <section>
+            <p><%= question.question %></p>
+            <% question.options.forEach((option, optionIndex) => { %>
+            <input
+              type="radio"
+              id="question_<%= questionIndex %>_option_<%= optionIndex %>"
+              name="question_<%= questionIndex  %>"
+              value="option_<%= optionIndex %>"
+              required
+            />
+            <label for="question_<%= questionIndex %>_option_<%= optionIndex %>"
+              ><%= option %></label
+            ><br />
+            <% }) %>
+          </section>
+          <% }); %>
+          <section>
+            <button type="submit">Submit Answers</button>
+          </section>
         </form>
       </article>
     </main>
-    <button>Next Question</button>
   </body>
 </html>
