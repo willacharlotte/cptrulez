@@ -3,42 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Quiz about testing principles">
+    <meta name="description" content="Quiz about testing principles" />
     <title>Quiz</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-</head>
-<body class="container">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+    />
+  </head>
+  <body class="container">
     <header>
-        <h1>CPTRulez Quiz</h1>
+      <h1>CPTRulez Quiz</h1>
     </header>
     <main>
-        <form action="/results" method="post">
-            <fieldset>
-                <legend>Quiz Questions</legend>
-                <% questions.forEach((question, questionIndex) => { %>
-                <section>
-                    <h2><%= question.question %></h2>
-                    <% question.options.forEach((option, optionIndex) => { %>
-                    <div>
-                        <input
-                            type="radio"
-                            id="question_<%= questionIndex %>_option_<%= optionIndex %>"
-                            name="question_<%= questionIndex  %>"
-                            value="<%= optionIndex %>"
-                            required
-                        />
-                        <label for="question_<%= questionIndex %>_option_<%= optionIndex %>"
-                            ><%= option %></label
-                        >
-                    </div>
-                    <% }) %>
-                </section>
-                <% }); %>
-            </fieldset>
-            <section>
-                <button type="submit">Submit Answers</button>
-            </section>
-        </form>
+      <form action="/results" method="post">
+        <fieldset>
+          <legend>Quiz Questions</legend>
+          <% questions.forEach((question, questionIndex) => { %>
+          <section>
+            <h2><%= question.question %></h2>
+            <% question.options.forEach((option, optionIndex) => { %>
+            <div>
+              <input
+                type="radio"
+                id="question_<%= questionIndex %>_option_<%= optionIndex %>"
+                name="question_<%= questionIndex  %>"
+                value="<%= optionIndex %>"
+                required
+              />
+              <label
+                for="question_<%= questionIndex %>_option_<%= optionIndex %>"
+                ><%= option %></label
+              >
+            </div>
+            <% }) %>
+          </section>
+          <% }); %>
+        </fieldset>
+        <section>
+          <button type="submit" style="background-color: #e00">
+            Submit Answers
+          </button>
+        </section>
+      </form>
     </main>
-</body>
+  </body>
 </html>
