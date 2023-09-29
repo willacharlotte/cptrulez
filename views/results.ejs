@@ -1,29 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Quiz about testing principles">
     <title>Results</title>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
-    />
-  </head>
-  <body class="container">
-    <main class="container">
-      <% const scorePercent = score.score / score.total * 100 %> <% if
-      (scorePercent === 100) { %>
-      <h1>You're a testing natural! 🎉</h1>
-      <% } else if (scorePercent >= 50) { %>
-      <h1>You're getting there. 🤓</h1>
-      <% } else if (scorePercent > 0) { %>
-      <h1>You may need to hit the books. 📚</h1>
-      <% } else { %>
-      <h1>You need serious help. 😵</h1>
-      <% } %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+<body class="container">
+    <header>
+        <h1>Test Results</h1>
+    </header>
+    <main>
+        <% const scorePercent = (score.score / score.total) * 100; %>
 
-      <h2>You scored <%= score.score %> out of <%= score.total %></h2>
+        <h2>Your Score: <%= score.score %> out of <%= score.total %></h2>
+
+        <section aria-labelledby="result-heading">
+            <h3 id="result-heading">Result:</h3>
+            <% if (scorePercent === 100) { %>
+                <p>You're a testing natural! 🎉</p>
+            <% } else if (scorePercent >= 50) { %>
+                <p>You're getting there. 🤓</p>
+            <% } else if (scorePercent > 0) { %>
+                <p>You may need to hit the books. 📚</p>
+            <% } else { %>
+                <p>You need serious help. 😵</p>
+            <% } %>
+        </section>
+
+        <a href="/" role="button">Play Again!</a>
     </main>
-    <a href="/" role="button">Play Again!</a>
-  </body>
+</body>
 </html>
